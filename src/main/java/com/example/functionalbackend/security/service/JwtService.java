@@ -1,4 +1,4 @@
-package com.example.functionalbackend.security.jwt;
+package com.example.functionalbackend.security.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
