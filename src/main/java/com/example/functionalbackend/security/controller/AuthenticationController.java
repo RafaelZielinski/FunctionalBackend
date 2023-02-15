@@ -1,10 +1,10 @@
 package com.example.functionalbackend.security.controller;
 
+import com.example.functionalbackend.security.auth.AuthenticationRequest;
 import com.example.functionalbackend.security.auth.AuthenticationResponse;
 import com.example.functionalbackend.security.auth.RegisterRequest;
 import com.example.functionalbackend.security.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,5 +22,11 @@ public class AuthenticationController {
     public ResponseEntity<AuthenticationResponse> register(
             @RequestBody RegisterRequest request) {
         return ResponseEntity.ok(service.register(request));
+    }
+
+    @PostMapping("/authenticate")
+    public ResponseEntity<AuthenticationResponse> authenticate(
+            @RequestBody AuthenticationRequest request) {
+        return ResponseEntity.ok(service.authenticate(request));
     }
 }
