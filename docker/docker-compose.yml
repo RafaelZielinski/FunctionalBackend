@@ -1,10 +1,11 @@
 services:
   postgres:
     container_name: postgres-sql
-    image: postgres
+    image: postgres:15.2
     environment:
-      POSTGRES_USER: username
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: rafael
+      POSTGRES_PASSWORD: zielinski
+      POSTGRES_DB: functionalbackend
       PGDATA: /data/postgres
     volumes:
       - postgres:/data/postgres
