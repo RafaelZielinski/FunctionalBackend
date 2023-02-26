@@ -4,6 +4,7 @@ import com.example.functionalbackend.security.auth.AuthenticationRequest;
 import com.example.functionalbackend.security.auth.AuthenticationResponse;
 import com.example.functionalbackend.security.auth.RegisterRequest;
 import com.example.functionalbackend.security.service.AuthenticationService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +21,7 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> register(
-            @RequestBody RegisterRequest request) {
+            @RequestBody @Valid RegisterRequest request) {
         return ResponseEntity.ok(service.register(request));
     }
 
