@@ -9,7 +9,6 @@ import com.example.functionalbackend.security.model.Role;
 import com.example.functionalbackend.security.model.User;
 import com.example.functionalbackend.security.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -28,7 +27,7 @@ public class AuthenticationService {
 
     public AuthenticationResponse register(RegisterRequest request) {
 
-        if(userRepository.findByEmail(request.getEmail()).isPresent()) {
+        if (userRepository.findByEmail(request.getEmail()).isPresent()) {
             log.error("User already exists");
             throw new UserAlreadyExistsException("User already exists");
 
