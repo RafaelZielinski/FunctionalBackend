@@ -1,0 +1,5 @@
+url=jdbc:postgresql://localhost:5432/functionalbackend
+username=rafael
+password=zielinski
+driver=org.postgresql.Driver
+changeLogFile=src/main/resources/liquibase-changelog.xml
