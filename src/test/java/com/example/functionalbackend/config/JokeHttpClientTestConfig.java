@@ -1,6 +1,7 @@
 package com.example.functionalbackend.config;
 
 import com.example.functionalbackend.infrastructure.joke.RemoteJokeClient;
+import com.example.functionalbackend.infrastructure.joke.error.RestTemplateResponseErrorHandler;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
