@@ -31,5 +31,4 @@ public class JokeService {
                     throw new JokeNotFoundException(id);
                 });
     }
-
 }

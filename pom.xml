@@ -89,7 +89,7 @@
                 <version>4.17.2</version>
                 <configuration>
                     <propertyFile>
-                        src/main/resources/liquibase.propeties
+                        src/main/resources/liquibase.properties
                     </propertyFile>
                 </configuration>
             </plugin>
