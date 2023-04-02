@@ -27,7 +27,7 @@ public class JokeHttpClient implements RemoteJokeClient {
                     MainJokeDto.class, type, amountOfJokes);
             return (forObject != null) ? forObject : MainJokeDto.builder().build();
         } catch (RestClientException | IllegalArgumentException e) {
-            log.error("Something wrong with client from jokes " + e.getMessage() + " " + e.getClass());
+            log.error("Something went wrong with client from jokes " + e.getMessage() + " " + e.getClass());
             return MainJokeDto.builder().build();
         }
     }

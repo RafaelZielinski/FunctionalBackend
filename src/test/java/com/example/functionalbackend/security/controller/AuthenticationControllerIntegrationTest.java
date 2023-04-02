@@ -1,6 +1,7 @@
 package com.example.functionalbackend.security.controller;
 
 import com.example.functionalbackend.FunctionalBackendApplication;
+import com.example.functionalbackend.config.JokeHttpClientConfig;
 import com.example.functionalbackend.security.model.Role;
 import com.example.functionalbackend.security.model.User;
 import com.example.functionalbackend.security.repository.UserRepository;
@@ -12,6 +13,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Conditional;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -24,10 +27,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootTest(classes = AuthenticationControllerIntegrationTest.TestConfig.class,
+@SpringBootTest(classes = {AuthenticationControllerIntegrationTest.TestConfig.class},
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-@ActiveProfiles("test")
+@ActiveProfiles({"test"})
 class AuthenticationControllerIntegrationTest {
 
     @Autowired
@@ -153,6 +156,7 @@ class AuthenticationControllerIntegrationTest {
                 .build();
     }
 
+    @Configuration
     @Import(FunctionalBackendApplication.class)
     static class TestConfig {
 
