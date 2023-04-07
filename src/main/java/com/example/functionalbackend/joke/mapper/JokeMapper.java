@@ -3,12 +3,12 @@ package com.example.functionalbackend.joke.mapper;
 import com.example.functionalbackend.infrastructure.joke.dto.JokeDto;
 import com.example.functionalbackend.joke.dto.TypeOfJoke;
 import com.example.functionalbackend.joke.model.Joke;
-import lombok.extern.log4j.Log4j2;
 import java.util.Arrays;
+import java.util.Locale;
 
 public class JokeMapper {
 
-    public static JokeDto mapToOfferDto(Joke joke) {
+    public static JokeDto mapToJokeDto(Joke joke) {
         return JokeDto.builder()
                 .id(joke.getId())
                 .category(joke.getCategory())
@@ -17,8 +17,20 @@ public class JokeMapper {
                 .build();
     }
 
-    static public boolean isMember(String aName) {
-        final boolean match = Arrays.stream(TypeOfJoke.values()).anyMatch(element -> element.equals(TypeOfJoke.valueOf(aName)));
-        return match;
+    public static boolean isMember(String aName) {
+        if(Arrays.stream(TypeOfJoke.values()).anyMatch(element -> element.toString().equals(aName))) return true;
+        else return false;
+//        return Arrays.stream(TypeOfJoke.values()).anyMatch(element -> element.equals(TypeOfJoke.valueOf(aName)));
     }
+
+    public static Joke mapToJoke(JokeDto jokeDto) {
+        final Joke joke = new Joke();
+        joke.setJoke(jokeDto.getJoke());
+        joke.setId0fJoke(jokeDto.getId());
+        joke.setCategory(jokeDto.getCategory());
+        joke.setType(isMember(jokeDto.getType()) ? TypeOfJoke.valueOf(jokeDto.getType()) : TypeOfJoke.SINGLE);
+        return joke;
+    }
+
+
 }
