@@ -34,9 +34,5 @@ public class Joke {
     private TypeOfJoke type;
     private String joke;
     @Column(name = "id_of_joke")
-    private Integer id0fJoke;
-
-
-
-
+    private Long id0fJoke;
 }
