@@ -38,7 +38,7 @@ public interface JokeDtoSample {
                 "programming",
                 com.example.functionalbackend.joke.dto.TypeOfJoke.SINGLE,
                 "FirstJoke",
-                33);
+                33L);
     }
 
     default Joke second() {
@@ -46,7 +46,7 @@ public interface JokeDtoSample {
                 "political",
                 com.example.functionalbackend.joke.dto.TypeOfJoke.TWO_PART,
                 "SecondJoke",
-                34);
+                34L);
     }
 
     default List<Joke> listOfTwoJokeDtos() {
