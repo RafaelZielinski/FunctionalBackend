@@ -16,9 +16,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 public class JokeDto {
-    String category;
-    String type;
-    String joke;
-    Long id;
+
+     String category;
+     String type;
+     String joke;
+     Long id;
 
 }
