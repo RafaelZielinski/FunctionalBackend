@@ -6,6 +6,7 @@ import com.example.functionalbackend.joke.dto.JokeDto;
 import com.example.functionalbackend.joke.service.JokeService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

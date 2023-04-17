@@ -8,6 +8,7 @@ import com.example.functionalbackend.joke.model.Joke;
 import com.example.functionalbackend.joke.repository.JokeRepository;
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,7 @@ public class JokeService {
 
     private final JokeRepository jokeRepository;
 
+    @Cacheable(cacheNames = "jokes")
     public List<JokeDto> findAllOffers() {
         return jokeRepository.findAll().stream().map(JokeMapper::mapToJokeDto).collect(Collectors.toList());
     }
