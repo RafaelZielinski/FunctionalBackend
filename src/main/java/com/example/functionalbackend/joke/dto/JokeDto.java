@@ -1,5 +1,6 @@
 package com.example.functionalbackend.joke.dto;
 
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
@@ -23,8 +24,8 @@ public class JokeDto implements Serializable {
     @NotNull(message = "{joke.not.null}")
     @NotEmpty(message = "{joke.not.empty}")
     private final String joke;
-    @NotNull(message = "{id.not.null}")
-    @NotEmpty(message = "{id.not.empty}")
+    @Min(message = "{id.bigger.than.zero}", value = 1)
+//    @NotEmpty(message = "{id.not.empty}")
     private final Long id;
 
 }
