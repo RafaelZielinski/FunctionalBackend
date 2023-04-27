@@ -1,7 +1,9 @@
 package com.example.functionalbackend.joke.service;
 
-import com.example.functionalbackend.infrastructure.joke.dto.JokeDto;
-import com.example.functionalbackend.infrastructure.joke.dto.TypeOfJoke;
+
+
+import com.example.functionalbackend.joke.dto.JokeDto;
+import com.example.functionalbackend.joke.dto.TypeOfJoke;
 import com.example.functionalbackend.joke.model.Joke;
 
 import java.util.Arrays;

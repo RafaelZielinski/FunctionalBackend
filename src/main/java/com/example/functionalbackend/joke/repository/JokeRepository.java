@@ -8,4 +8,6 @@ import java.util.Optional;
 public interface JokeRepository extends JpaRepository<Joke, Long> {
 
     Boolean existsById0fJoke(Long idOfJoke);
+
+    Optional<Joke> findJokeById0fJoke(Long idOfJoke);
 }

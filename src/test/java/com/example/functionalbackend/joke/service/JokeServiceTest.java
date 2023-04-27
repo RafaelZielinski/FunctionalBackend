@@ -1,6 +1,7 @@
 package com.example.functionalbackend.joke.service;
 
-import com.example.functionalbackend.infrastructure.joke.dto.JokeDto;
+
+import com.example.functionalbackend.joke.dto.JokeDto;
 import com.example.functionalbackend.joke.exception.JokeNotFoundException;
 import com.example.functionalbackend.joke.repository.JokeRepository;
 import org.junit.jupiter.api.Test;

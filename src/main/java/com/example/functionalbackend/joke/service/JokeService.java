@@ -9,6 +9,7 @@ import com.example.functionalbackend.joke.repository.JokeRepository;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
@@ -44,12 +45,10 @@ public class JokeService {
     }
 
     public JokeDto saveJoke(JokeDto jokeDto) {
-        final Joke joke = JokeMapper.mapToJoke(jokeDto);
-        try {
-            final Joke save = jokeRepository.save(joke);
-            return JokeMapper.mapToJokeDto(save);
-        } catch (DuplicateKeyException e) {
+        if (Boolean.TRUE.equals(jokeRepository.existsById0fJoke(jokeDto.getId())))
             throw new JokeDuplicateException(jokeDto.getId());
-        }
+        final Joke joke = JokeMapper.mapToJoke(jokeDto);
+        jokeRepository.save(joke);
+        return jokeDto;
     }
 }
