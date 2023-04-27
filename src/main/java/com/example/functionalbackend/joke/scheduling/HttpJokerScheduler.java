@@ -24,9 +24,9 @@ public class HttpJokerScheduler {
 
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
-    private static final String STARTED_JOKES_FETCHING_MESSAGE = "Started offers fetching {}";
-    private static final String STOPPER_JOKES_FETCHING_MESSAGE = "Stopped offers fetching {}";
-    private static final String ADDED_JOKES_FETCHING_MESSAGE = "Added new offers {}";
+    private static final String STARTED_JOKES_FETCHING_MESSAGE = "Started jokes fetching {}";
+    private static final String STOPPER_JOKES_FETCHING_MESSAGE = "Stopped jokes fetching {}";
+    private static final String ADDED_JOKES_FETCHING_MESSAGE = "Added new jokes {}";
 
     private final RemoteJokeClient remoteJokeClient;
     private final JokeService jokeService;
